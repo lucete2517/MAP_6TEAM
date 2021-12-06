@@ -119,33 +119,9 @@ class OneDay : AppCompatActivity() {
             dateInfo.ExpenseList.remove(expenseClass)
             if(expenseClass.Inout.equals("수입")) {
                 dateInfo.Income -= expenseClass.Amount
-
-                for(i in 0 until CategoryclassListNum){
-                    if(CategoryclassList[i].CategoryName.equals(expenseClass.Category)){
-                        CategoryclassList[i].Income -= expenseClass.Amount
-                    }
-                }
-
-                for(i in 0 until PaymentMethodClassListNum){
-                    if(PaymentMethodClassList[i].PaymentMethodName.equals(expenseClass.Payment)){
-                        PaymentMethodClassList[i].Balance -= expenseClass.Amount
-                    }
-                }
             }
             else if(expenseClass.Inout.equals("지출")) {
                 dateInfo.Spend -= expenseClass.Amount
-
-                for(i in 0 until CategoryclassListNum){
-                    if(CategoryclassList[i].CategoryName.equals(expenseClass.Category)){
-                        CategoryclassList[i].Spend -= expenseClass.Amount
-                    }
-                }
-
-                for(i in 0 until PaymentMethodClassListNum){
-                    if(PaymentMethodClassList[i].PaymentMethodName.equals(expenseClass.Payment)){
-                        PaymentMethodClassList[i].Balance += expenseClass.Amount
-                    }
-                }
             }
             dateInfo.Total -= expenseClass.Amount
         }
