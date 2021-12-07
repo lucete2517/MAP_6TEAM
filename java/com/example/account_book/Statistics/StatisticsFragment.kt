@@ -23,7 +23,6 @@ import java.text.SimpleDateFormat
 
 class StatisticsFragment : Fragment() {
     var CategoryEditText = View.GONE
-    var SubCategoryMoneyString = ""
 
     private lateinit var TotalIncomeTextView : TextView
     private lateinit var TotalSpendTextView : TextView
