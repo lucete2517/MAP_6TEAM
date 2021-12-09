@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="inout">
+        <item>수입</item>
+        <item>지출</item>
+    </string-array>
+
+    <string-array name="alertSpinner">
+        <item>(선택 안함)</item>
+        <item>3일 전</item>
+        <item>2일 전</item>
+        <item>1일 전</item>
+        <item>3시간 전</item>
+        <item>1분 후</item>
+    </string-array>
+
+</resources>
