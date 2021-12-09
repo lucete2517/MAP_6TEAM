@@ -49,6 +49,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import com.example.account_book.Data.*
+import com.example.account_book.MainActivity.Companion.CategoryclassList
 
 
 //-----------------------------------------------------------------------------------------------------------------------
@@ -214,6 +215,8 @@ class AddRecord : AppCompatActivity() {
 
         val Category = CategorySpinner.selectedItem.toString()
 
+        val CategoryNum : Int = CategorySpinner.selectedItemPosition
+
         val PaymentMethodNum : Int = PaymentMethodSpinner.selectedItemPosition
 
         val Money = MoneyRecordField.text.toString().replace(",","").toInt()
@@ -247,12 +250,14 @@ class AddRecord : AppCompatActivity() {
                 if(PaymentMethodNum != 0){
                     PaymentMethodClassList[PaymentMethodNum-1].Balance += Money
                 }
+                CategoryclassList[CategoryNum].Income += Money
             }
             else if(Expense.Inout == "지출") {
                 FullList.add(DateClass(TimeInLength8,TimeinMillis,Spend = Money, Total = -Money , ExpenseList = arrayListOf<ExpenseClass>(Expense)))
                 if(PaymentMethodNum != 0){
                     PaymentMethodClassList[PaymentMethodNum-1].Balance -= Money
                 }
+                CategoryclassList[CategoryNum].Spend += Money
             }
             DateInfoMap[TimeInLength8] = 1
         }
