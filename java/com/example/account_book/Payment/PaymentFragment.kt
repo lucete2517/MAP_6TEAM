@@ -114,10 +114,10 @@ class PaymentFragment : Fragment() {
     //-----------------------------------------------------------------------------------------------------------------------
     override fun onResume() {
         super.onResume()
-        SettingStatisticsView()
+        SettingPaymentView()
     }
 
-    private fun SettingStatisticsView(){
+    private fun SettingPaymentView(){
         PaymentTotalBalance = 0
         PaymentMethodClassList.forEach {
             PaymentTotalBalance += it.Balance
